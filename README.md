@@ -2,19 +2,19 @@
 
 A modern authentication web application built with React and Tailwind CSS. This project was developed as part of an assignment for Easygenerator.
 
-## 🚀 Features
+## Features
 
 - **User Authentication**: Sign up, log in, and log out functionalities.
 - **Environment Configuration**: Easily configurable via `.env` file.
 
-## 🛠️ Tech Stack
+## Tech Stack
 
 - **Frontend**: React
 - **Styling**: Tailwind CSS
 - **Package Management**: npm
 - **Language**: TypeScript
 
-## 📦 Installation
+## Installation
 
 1. **Clone the repository**:
 
@@ -34,7 +34,7 @@ A modern authentication web application built with React and Tailwind CSS. This 
    - Create a `.env` file taking `.env.example` as a reference.
    - Update the variables as needed.
 
-## 🧪 Available Scripts
+## Available Scripts
 
 In the project directory, you can run:
 
@@ -63,6 +63,6 @@ In the project directory, you can run:
   Builds the app for production to the `build` folder.
 
 
-## 📄 License
+## License
 
 This project is licensed under the [MIT License](LICENSE).
