@@ -15,13 +15,13 @@ const Signup = () => {
     register,
     handleSubmit,
     watch,
-    formState: { errors, touchedFields, dirtyFields },
+    formState: { errors, touchedFields, dirtyFields, isSubmitted },
   } = useForm<SignupFormInputs>({
     mode: "onChange",
     reValidateMode: "onChange",
   });
 
-  console.log(errors)
+  console.log(errors);
 
   const navigate = useNavigate();
   const password = watch("password");
@@ -76,6 +76,7 @@ const Signup = () => {
               touchedFields={touchedFields}
               dirtyFields={dirtyFields}
               errorMessage={errors.email?.message}
+              isSubmitted={isSubmitted}
             />
           </div>
 
@@ -99,6 +100,7 @@ const Signup = () => {
               touchedFields={touchedFields}
               dirtyFields={dirtyFields}
               errorMessage={errors.name?.message}
+              isSubmitted={isSubmitted}
             />
           </div>
 
@@ -123,6 +125,7 @@ const Signup = () => {
               dirtyFields={dirtyFields}
               showToggle
               errorMessage={errors.password?.message}
+              isSubmitted={isSubmitted}
             />
           </div>
 
@@ -151,6 +154,7 @@ const Signup = () => {
               dirtyFields={dirtyFields}
               showToggle
               errorMessage={errors.confirmPassword?.message}
+              isSubmitted={isSubmitted}
             />
           </div>
 

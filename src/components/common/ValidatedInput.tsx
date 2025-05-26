@@ -30,6 +30,7 @@ type Props<T extends FieldValues> = {
   dirtyFields: Partial<Record<keyof T, boolean>>;
   errorMessage?: string;
   showToggle?: boolean;
+  isSubmitted?: boolean;
 };
 
 function ValidatedInput<T extends FieldValues>({
@@ -44,6 +45,7 @@ function ValidatedInput<T extends FieldValues>({
   dirtyFields,
   errorMessage,
   showToggle = false,
+  isSubmitted,
 }: Props<T>) {
   const [show, setShow] = useState(false);
 
@@ -54,14 +56,14 @@ function ValidatedInput<T extends FieldValues>({
   const borderClass =
     !hasError && isDirty
       ? "border-green-500 focus:outline-green-600"
-      : isTouched
+      : isTouched || (isSubmitted && hasError)
       ? "border-red-500 focus:outline-red-600"
       : "border-gray-300 focus:outline-indigo-600";
 
   const validationState =
     !hasError && isDirty
       ? ValidationState.VALID
-      : isTouched
+      : isTouched || (isSubmitted && hasError)
       ? ValidationState.INVALID
       : ValidationState.NONE;
 

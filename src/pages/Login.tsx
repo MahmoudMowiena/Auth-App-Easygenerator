@@ -10,7 +10,7 @@ const Login = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, touchedFields, dirtyFields },
+    formState: { errors, touchedFields, dirtyFields, isSubmitted },
   } = useForm<LoginFormInputs>();
   const navigate = useNavigate();
 
@@ -63,6 +63,7 @@ const Login = () => {
               errors={errors}
               touchedFields={touchedFields}
               dirtyFields={dirtyFields}
+              isSubmitted={isSubmitted}
             />
           </div>
 
@@ -88,6 +89,7 @@ const Login = () => {
               dirtyFields={dirtyFields}
               showToggle
               errorMessage={errors.password?.message}
+              isSubmitted={isSubmitted}
             />
           </div>
 
